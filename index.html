@@ -65,7 +65,9 @@
     const unlockHour = 23;
     const messageEl = document.getElementById("message");
 
-    if (now.getHours() >= unlockHour) {
+    const hasUnlocked = localStorage.getItem("claraMessageUnlocked");
+
+    if (now.getHours() >= unlockHour || hasUnlocked === "true") {
       messageEl.textContent = `Clara, hör zu, ich red nicht nur so,
 du bist mehr als nur schön, du bist mein Niveau.
 Dein Körper ein Kunstwerk, geformt wie Musik,
@@ -95,6 +97,8 @@ Du bist du – kein Vergleich, kein Klon,
 dein Körper dein Tempel, deine eigene Vision.
 Scheiß auf Ideale, die irgendwer erfand,
 du setzt dein’n Standard, mit Herz und Verstand.`;
+
+      localStorage.setItem("claraMessageUnlocked", "true");
     } else {
       const remaining = unlockHour - now.getHours();
       messageEl.textContent = `Gedulde dich noch ein wenig… In ${remaining} Stunde(n) wartet eine ganz besondere Nachricht auf dich. 🌙`;
