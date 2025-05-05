@@ -34,13 +34,25 @@
       background-image: url("sprite1.png");
       background-size: cover;
       z-index: 10;
-      animation: float 5s infinite ease-in-out;
+      animation: moveSprite 10s linear infinite;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(5deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
+    @keyframes moveSprite {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      25% {
+        transform: translate(100px, -50px) rotate(10deg);
+      }
+      50% {
+        transform: translate(200px, 50px) rotate(-10deg);
+      }
+      75% {
+        transform: translate(100px, 100px) rotate(5deg);
+      }
+      100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
     }
   </style>
 </head>
@@ -88,14 +100,15 @@ du setzt dein’n Standard, mit Herz und Verstand.`;
       messageEl.textContent = `Gedulde dich noch ein wenig… In ${remaining} Stunde(n) wartet eine ganz besondere Nachricht auf dich. 🌙`;
     }
 
-    // Sprite-Animation zufällig positionieren
+    // Sprite-Figuren zufällig positionieren mit Animation
     const numSprites = 5;
     for (let i = 0; i < numSprites; i++) {
       const sprite = document.createElement("div");
       sprite.className = "sprite";
-      sprite.style.top = `${Math.random() * 90}vh`;
-      sprite.style.left = `${Math.random() * 90}vw`;
-      sprite.style.animationDuration = `${4 + Math.random() * 3}s`;
+      sprite.style.top = `${Math.random() * 80}vh`;
+      sprite.style.left = `${Math.random() * 80}vw`;
+      sprite.style.animationDuration = `${6 + Math.random() * 5}s`;
+      sprite.style.animationDelay = `${Math.random() * 3}s`;
       document.body.appendChild(sprite);
     }
   </script>
