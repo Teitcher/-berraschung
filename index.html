@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Für Clara ♥</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #fff0f5;
+      color: #333;
+    }
+    .message {
+      margin-top: 30px;
+      white-space: pre-wrap;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Für Clara 💌</h1>
+  <div id="message" class="message"></div>
+
+  <script>
+    const now = new Date();
+    const unlockHour = 23;
+    const currentHour = now.getHours();
+    const messageEl = document.getElementById("message");
+
+    if (currentHour >= unlockHour) {
+      messageEl.textContent = `Clara, hör zu, ich red nicht nur so,
+du bist mehr als nur schön, du bist mein Niveau.
+Dein Körper ein Kunstwerk, geformt wie Musik,
+jede Linie, jede Kurve – einfach einzigartig.
+
+Von den Schultern bis zur Hüfte, dieser Flow,
+wie dein Rücken sich bewegt – Girl, das ist so.
+Dein Po, deine Beine, kraftvoll, präsent,
+und alles daran ist perfekt, wie man’s nur selten kennt.
+
+Du bist du – kein Vergleich, kein Klon,
+dein Körper dein Tempel, deine eigene Vision.
+Scheiß auf Ideale, die irgendwer erfand,
+du setzt dein’n Standard, mit Herz und Verstand.
+
+Dein Bauch, deine Brust – so sanft, so echt,
+deine Haut ein Gefühl, das kein’n Zweifel lässt.
+Selbst dein Blick in der Sonne – pure Magie,
+du strahlst mehr als jedes Model auf ‘nem Magazin.
+
+Deine Stärke, dein Stil – das ist, was zählt,
+nicht das, was Insta oder TikTok erzählt.
+Ich seh dich und denk: Wow, das ist mein Bild,
+und jeder Moment mit dir bleibt für mich wild.
+
+Du bist du – kein Vergleich, kein Klon,
+dein Körper dein Tempel, deine eigene Vision.
+Scheiß auf Ideale, die irgendwer erfand,
+du setzt dein’n Standard, mit Herz und Verstand.`;
+    } else {
+      const remaining = unlockHour - currentHour;
+      messageEl.textContent = `Gedulde dich noch ein wenig… In ${remaining} Stunde(n) wartet eine ganz besondere Nachricht auf dich. 🌙`;
+    }
+  </script>
+</body>
+</html>
