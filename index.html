@@ -1,120 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Für Clara ♥</title>
-  <style>
-    body {
-      margin: 0;
-      background: #fff0f5;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .message {
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 20px;
-      font-size: 1.2em;
-      white-space: pre-wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    .sprite {
-      position: absolute;
-      width: 64px;
-      height: 64px;
-      background-image: url("sprite1.png");
-      background-size: cover;
-      z-index: 10;
-      animation: moveSprite 10s linear infinite;
-    }
-
-    @keyframes moveSprite {
-      0% {
-        transform: translate(0px, 0px) rotate(0deg);
-      }
-      25% {
-        transform: translate(100px, -50px) rotate(10deg);
-      }
-      50% {
-        transform: translate(200px, 50px) rotate(-10deg);
-      }
-      75% {
-        transform: translate(100px, 100px) rotate(5deg);
-      }
-      100% {
-        transform: translate(0px, 0px) rotate(0deg);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Für Clara 💌</h1>
-  <div id="message" class="message"></div>
-
-  <script>
-    const now = new Date();
-    const unlockHour = 23;
-    const messageEl = document.getElementById("message");
-
-    const hasUnlocked = localStorage.getItem("claraMessageUnlocked");
-
-    if (now.getHours() >= unlockHour || hasUnlocked === "true") {
-      messageEl.textContent = `Clara, hör zu, ich red nicht nur so,
-du bist mehr als nur schön, du bist mein Niveau.
-Dein Körper ein Kunstwerk, geformt wie Musik,
-jede Linie, jede Kurve – einfach einzigartig.
-
-Von den Schultern bis zur Hüfte, dieser Flow,
-wie dein Rücken sich bewegt – Girl, das ist so.
-Dein Po, deine Beine, kraftvoll, präsent,
-und alles daran ist perfekt, wie man’s nur selten kennt.
-
-Du bist du – kein Vergleich, kein Klon,
-dein Körper dein Tempel, deine eigene Vision.
-Scheiß auf Ideale, die irgendwer erfand,
-du setzt dein’n Standard, mit Herz und Verstand.
-
-Dein Bauch, deine Brust – so sanft, so echt,
-deine Haut ein Gefühl, das kein’n Zweifel lässt.
-Selbst dein Blick in der Sonne – pure Magie,
-du strahlst mehr als jedes Model auf ‘nem Magazin.
-
-Deine Stärke, dein Stil – das ist, was zählt,
-nicht das, was Insta oder TikTok erzählt.
-Ich seh dich und denk: Wow, das ist mein Bild,
-und jeder Moment mit dir bleibt für mich wild.
-
-Du bist du – kein Vergleich, kein Klon,
-dein Körper dein Tempel, deine eigene Vision.
-Scheiß auf Ideale, die irgendwer erfand,
-du setzt dein’n Standard, mit Herz und Verstand.`;
-
-      localStorage.setItem("claraMessageUnlocked", "true");
-    } else {
-      const remaining = unlockHour - now.getHours();
-      messageEl.textContent = `Gedulde dich noch ein wenig… In ${remaining} Stunde(n) wartet eine ganz besondere Nachricht auf dich. 🌙`;
-    }
-
-    // Sprite-Figuren zufällig positionieren mit Animation
-    const numSprites = 5;
-    for (let i = 0; i < numSprites; i++) {
-      const sprite = document.createElement("div");
-      sprite.className = "sprite";
-      sprite.style.top = `${Math.random() * 80}vh`;
-      sprite.style.left = `${Math.random() * 80}vw`;
-      sprite.style.animationDuration = `${6 + Math.random() * 5}s`;
-      sprite.style.animationDelay = `${Math.random() * 3}s`;
-      document.body.appendChild(sprite);
-    }
-  </script>
+    <header><h1>Festival-Zeltbewertung</h1></header>
+    <div class="container">
+        <h2>Willkommen zur Festival-Zeltbewertung</h2>
+        <p>Hier kannst du verschiedene Festivalzelte vergleichen und bewerten. Klicke unten, um zu starten!</p>
+        <a href="zelt1.html" class="button">Jetzt starten</a>
+    </div>
+    <footer><p>&copy; 2025 Festival Zelt Bewertung</p></footer>
 </body>
 </html>
