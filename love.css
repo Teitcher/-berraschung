@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #ffe0e9, #ffc0cb);
+  animation: fadeIn 2s ease-in-out;
+  cursor: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBmaWxsPSJyZWQiIGQ9Ik0yMy42LDIuNmMtMi45LDAtNS42LDEuNS03LjEsNGMtMS41LTIuNS00LjItNC03LjEtNEM0LjgsMi42LDEsNi40LDEsMTAuOWMwLDExLjIsMTUuNSwxOSwxNS41LDE5czE1LjUtNy45LDE1LjUtMTlDMzIsNi40LDI4LjIsMi42LDIzLjYsMi42eiIvPjwvc3ZnPg==") 8 8, auto;
+}
+
+body.version2 { background: linear-gradient(135deg, #e0c3fc, #8ec5fc); }
+body.version3 { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
+body.version4 { background: linear-gradient(135deg, #f6d365, #fda085); }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#letter {
+  font-size: 1.4em;
+  line-height: 1.4;
+}
+
+#letter span {
+  display: inline-block;
+  animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.search-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#gift {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5em;
+  animation: pop 1s forwards;
+}
+
+@keyframes pop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  #letter { font-size: 1.2em; }
+}
